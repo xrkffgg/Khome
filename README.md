@@ -19,10 +19,6 @@
 
 - `yarn build`
 
-> 有点坑的地方是，打包后，本地打开无主题，扔到 `GitHub.io` 正常。
-> 
-> `deploy.sh` 根据当前环境，仅供参考
-
 ## LICENSE
 
 [MIT](https://github.com/xrkffgg/Khome/blob/master/LICENSE)
