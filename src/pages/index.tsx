@@ -3,16 +3,29 @@ import S from './index.css';
 import { Carousel, Icon } from 'antd';
 
 class app extends React.Component {
+  state = {
+    isFlow: false,
+  };
+
   go = (type: string) =>{
     return window.location.href = "https://xrkffgg.github.io/" + type
   };
 
   handleScroll = (e: { nativeEvent: { deltaY: number; }; }) =>{
-    if(e.nativeEvent.deltaY <= 0){
-      // 
-      this.refs.el.prev()
-    } else {
-      this.refs.el.next()
+    if(!this.state.isFlow){
+      this.setState({
+        isFlow: true
+      });
+      if(e.nativeEvent.deltaY <= 0){
+        this.refs.el.prev();
+      } else {
+        this.refs.el.next();
+      };
+      setTimeout(() =>{
+        this.setState({
+          isFlow: false
+        });
+      },500);
     }
   };
 
